@@ -1,0 +1,41 @@
+.col-md-8
+  %h1 Calculator
+  %p Client-server calculator. Use is very simple:
+  %ul
+    %li Enter the expression of buttons
+    %li
+      Press
+      %span.label.label-success =
+    %li
+      Done! And if not, click
+      %span.label.label-danger С
+      and try again.
+  %p Implemented using:
+  %ul
+    %li Ruby 2.3.3
+    %li Rails 4.2
+    %li
+      %code math_engine
+.col-md-4#calculator
+  .row
+    .col-xs-12#input
+  .row
+    - '+-*/'.each_char do |c|
+      %a.col-xs-3.btn.btn-warning{ data: { input: true,
+                                           value: c } }= c
+  .row
+    - '1234567890'.each_char do |c|
+      %a.col-xs-3.btn.btn-primary{ data: { input: true,
+                                        value: (c == '4') ? 5 : c } }= c
+    %a.col-xs-3.btn.btn-info{ data: { input: true,
+                                      value: '.' } } .
+  .row
+    - '()'.each_char do |c|
+      %a.col-xs-3.btn.btn-default{ data: { input: true,
+                                        value: c } }= c
+  .row
+    %a.col-xs-3.btn.btn-danger{ data: { clear: true } } C
+    %a.col-xs-3.btn.btn-success{ data: { submit: true,
+                                         path: calculate_path } } =
+    %a.col-xs-3.btn.btn-info{ data: { submit: true,
+                                         path: calculate_poorly_path } } poorly =

@@ -11,21 +11,9 @@ It's a simple single-page web application that contains a functioning calculator
 
 ### `TODO`s:
 
-  * Fork or clone this project
-  * Write out and perform specs
-  * Push to a personal repo
-
-#### Integration Specs
-Do not worry about testing for accuracy of the calculator's expression engine. Assume that is correct. Focus on the specs below
-
-  * As an end-user, I should be able to clear the calculator
-  * As an end-user, I should be able to calculate an expression using addition
-  * As an end-user, I should be able to calculate an expression using subtraction
-  * As an end-user, I should be able to calculate an expression using multiplication
-  * As an end-user, I should be able to calculate an expression using division
-  * As an end-user, I should be able to calculate an expression using grouping "(" and ")"
-
-#### Additional Checks
-  * Looking at the poorly equals button and method signature, what are some questions you would ask or recommendations you would offer if you saw this and there is no context in the app?
-  * How could you make the calculating an expression tests more DRY?
-  * Document bugs you find and attach as github issues with screenshots. 
+  * Fork or clone this project to your machine.
+  * Write out functional tests for the calculator app. Do not worry about browser/device tests.
+  * Complete the functional tests.
+  * Document any bugs you find with screenshots and/or screencasts with descriptions of the bugs.
+  * Open a Github issue for each bug found, include descriptions and screenshots.
+  * Push to a personal repo.

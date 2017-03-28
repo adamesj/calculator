@@ -10,7 +10,7 @@ describe "performing multiplication functions", :type => :feature, :js => true d
     find('.button_2').click
     find('.equals').click
 
-    expect('#input').to have_content '16'
+    expect(find('#input').text).to eq '16'
   end
 
   it "multiplies two negative numbers" do
@@ -23,7 +23,7 @@ describe "performing multiplication functions", :type => :feature, :js => true d
     find('.button_3').click
     find('.equals').click
 
-    expect('#input').to have_content '15'
+    expect(find('#input').text).to eq '15'
   end
 
   it "uses 0 as the first expression" do
@@ -34,7 +34,7 @@ describe "performing multiplication functions", :type => :feature, :js => true d
     find('.button_2').click
     find('.equals').click
 
-    expect('#input').to have_content '0'
+    expect(find('#input').text).to eq '0'
   end
 
   it "uses 0 as the second expression" do
@@ -44,7 +44,7 @@ describe "performing multiplication functions", :type => :feature, :js => true d
     click_operator('*')
     find('.button_0').click
 
-    expect('#input').to have_content '0'
+    expect(find('#input').text).to eq '0'
   end
 
   it "uses 1 as the first expression" do
@@ -54,7 +54,7 @@ describe "performing multiplication functions", :type => :feature, :js => true d
     click_operator('*')
     find('.button_7').click
 
-    expect('#input').to have_content '7'
+    expect(find('#input').text).to eq '7'
   end
 
   it "uses 1 as the second expression" do
@@ -64,21 +64,21 @@ describe "performing multiplication functions", :type => :feature, :js => true d
     click_operator('*')
     find('.button_1').click
 
-    expect('#input').to have_content '7'
+    expect(find('#input').text).to eq '7'
   end
 
   it "uses parentheses symbols when multiplying numbers" do
     visit root_path
 
-    find('.symbol_(').click
+    click_symbol('(')
     find('.button_9').click
-    find('.symbol_)').click
+    click_symbol(')')
     click_operator('*')
-    find('.symbol_(').click
+    click_symbol('(')
     find('.button_5').click
-    find('.symbol_)').click
+    click_symbol(')')
 
-    expect('#input').to have_content '45'
+    expect(find('#input').text).to eq '45'
   end
 
 end
@@ -86,5 +86,11 @@ end
 def click_operator(op)
   all(".operator").each do |operator|
     operator.click if operator.text == op
+  end
+end
+
+def click_symbol(symbol)
+  all(".symbol").each do |symb|
+    symb.click if symb.text == symbol
   end
 end

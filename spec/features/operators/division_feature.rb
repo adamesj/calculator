@@ -10,7 +10,7 @@ describe "performing division functions", :type => :feature, :js => true do
     find('.button_2').click
     find('.equals').click
 
-    expect('#input').to have_content '4'
+    expect(find('#input').text).to eq '4'
   end
 
   it "divides two negative numbers" do
@@ -24,7 +24,7 @@ describe "performing division functions", :type => :feature, :js => true do
     find('.button_3').click
     find('.equals').click
 
-    expect('#input').to have_content '8'
+    expect(find('#input').text).to eq '8'
   end
 
   it "uses 0 as the first expression" do
@@ -35,7 +35,7 @@ describe "performing division functions", :type => :feature, :js => true do
     find('.button_2').click
     find('.equals').click
 
-    expect('#input').to have_content '0'
+    expect(find('#input').text).to eq '0'
   end
 
   it "uses 0 as the second expression" do
@@ -45,7 +45,7 @@ describe "performing division functions", :type => :feature, :js => true do
     click_operator('/')
     find('.button_0').click
 
-    expect('#input').to have_content '0'
+    expect(find('#input').text).to eq '0'
   end
 end
 

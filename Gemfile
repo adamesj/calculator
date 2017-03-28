@@ -54,6 +54,13 @@ group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
+
+  # For user simulated testing
+  gem 'capybara', '~> 2.13'
+  gem 'launchy', '~> 2.4', '>= 2.4.3'
+  gem 'selenium-webdriver', '~> 3.3'
+  gem 'capybara-webkit'
+
   # Nice error pages
   gem 'better_errors'
 

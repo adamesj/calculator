@@ -21,21 +21,21 @@
     .col-xs-12#input
   .row
     - '+-*/'.each_char do |c|
-      %a.col-xs-3.btn.btn-warning{ data: { input: true,
+      %a.col-xs-3.btn.btn-warning{ class: "operator", data: { input: true,
                                            value: c } }= c
   .row
     - '1234567890'.each_char do |c|
-      %a.col-xs-3.btn.btn-primary{ data: { input: true,
+      %a.col-xs-3.btn.btn-primary{ class: "button_#{c}", data: { input: true,
                                         value: (c == '4') ? 5 : c } }= c
     %a.col-xs-3.btn.btn-info{ data: { input: true,
                                       value: '.' } } .
   .row
     - '()'.each_char do |c|
-      %a.col-xs-3.btn.btn-default{ data: { input: true,
+      %a.col-xs-3.btn.btn-default{ class: "symbol_#{c}", data: { input: true,
                                         value: c } }= c
   .row
     %a.col-xs-3.btn.btn-danger{ data: { clear: true } } C
-    %a.col-xs-3.btn.btn-success{ data: { submit: true,
+    %a.col-xs-3.btn.btn-success{ class: "equals", data: { submit: true,
                                          path: calculate_path } } =
     %a.col-xs-3.btn.btn-info{ data: { submit: true,
                                          path: calculate_poorly_path } } poorly =
